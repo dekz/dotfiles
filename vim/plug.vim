@@ -14,6 +14,7 @@ Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-rsi'
+Plug 'unblevable/quick-scope'
 "" Bdelete
 Plug 'moll/vim-bbye'
 "
