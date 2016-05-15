@@ -1,0 +1,55 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+<C-v>	plugins/expand_region.vim	/^vmap <C-v> <Plug>(expand_region_shrink)$/;"	m
+<Enter>	plugins/align.vim	/^vmap <Enter> <Plug>(EasyAlign)$/;"	m
+<Leader><Leader>	plugins/ctrlp.vim	/^noremap <Leader><Leader> <C-^>$/;"	m
+<Leader>P	misc.vim	/^nmap <Leader>P "+P$/;"	m
+<Leader>P	misc.vim	/^vmap <Leader>P "+P$/;"	m
+<Leader>T	plugins/ctrlp.vim	/^noremap <Leader>T :Buffers<CR>$/;"	m
+<Leader>a	plugins/rspec.vim	/^map <Leader>a :call RunAllSpecs()<CR>$/;"	m
+<Leader>bd	misc.vim	/^nmap <Leader>bd :bd<CR>$/;"	m
+<Leader>bn	misc.vim	/^nmap <Leader>bn :bn<CR>$/;"	m
+<Leader>bp	misc.vim	/^nmap <Leader>bp :bp<CR>$/;"	m
+<Leader>cp	misc.vim	/^nmap <Leader>cp :let @+ = expand("%:p")<CR>$/;"	m
+<Leader>d	misc.vim	/^noremap <Leader>d :Bdelete<CR>$/;"	m
+<Leader>d	misc.vim	/^vmap <Leader>d "+d$/;"	m
+<Leader>e	misc.vim	/^nmap <Leader>e :Explore<CR>$/;"	m
+<Leader>gw	plugins/ag.vim	/^  nnoremap <Leader>gw :silent! grep! "\\b<C-r><C-w>\\b"<CR>:cwindow<CR>:redraw!<CR>$/;"	m
+<Leader>l	plugins/rspec.vim	/^map <Leader>l :call RunLastSpec()<CR>$/;"	m
+<Leader>p	misc.vim	/^nmap <Leader>p "+p$/;"	m
+<Leader>p	misc.vim	/^vmap <Leader>p "+p$/;"	m
+<Leader>r	plugins/rspec.vim	/^map <Leader>r :call RunCurrentSpecFile()<CR>$/;"	m
+<Leader>s	plugins/rspec.vim	/^map <Leader>s :call RunNearestSpec()<CR>$/;"	m
+<Leader>t	plugins/ctrlp.vim	/^noremap <Leader>t :FZF<CR>$/;"	m
+<Leader>y	misc.vim	/^vmap <Leader>y "+y$/;"	m
+<Space>	leader.vim	/^map  <Space> <leader>$/;"	m
+<c-]>	plugins/ctrlp.vim	/^nnoremap <c-]> :CtrlPtjump<cr>$/;"	m
+<c-]>	plugins/ctrlp.vim	/^vnoremap <c-]> :CtrlPtjumpVisual<cr>$/;"	m
+<leader>q	plugins/quickfix.vim	/^nmap <script> <silent> <leader>q :call ToggleQuickfixList()<CR>$/;"	m
+Ag	plugins/ag.vim	/^  command! -nargs=+ -complete=file_in_path -bar Ag silent grep! <args>|cwindow|redraw!$/;"	c
+fresh_plug_install	plug_before.vim	/^  let fresh_plug_install = 1$/;"	v
+fresh_plug_install	plug_before.vim	/^let fresh_plug_install = 0$/;"	v
+g:ackprg	plugins/ag.vim	/^  let g:ackprg = 'ag --nogroup --nocolor --column'$/;"	v
+g:ctrlp_match_window	plugins/ctrlp.vim	/^let g:ctrlp_match_window = 'bottom,order:ttb results:50'$/;"	v
+g:ctrlp_max_files	plugins/ctrlp.vim	/^let g:ctrlp_max_files=0$/;"	v
+g:ctrlp_tjump_only_silent	plugins/ctrlp.vim	/^let g:ctrlp_tjump_only_silent = 1$/;"	v
+g:ctrlp_use_caching	plugins/ag.vim	/^  let g:ctrlp_use_caching = 0$/;"	v
+g:ctrlp_user_command	plugins/ag.vim	/^  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'$/;"	v
+g:lightline	plugins/lightline.vim	/^let g:lightline = {$/;"	v
+g:netrw_liststyle	misc.vim	/^let g:netrw_liststyle=3$/;"	v
+g:rainbow_active	plugins/rainbow.vim	/^let g:rainbow_active = 1$/;"	v
+g:rspec_command	plugins/rspec.vim	/^let g:rspec_command = "Dispatch bundle exec rspec {spec}"$/;"	v
+g:toggle_list_copen_command	plugins/quickfix.vim	/^let g:toggle_list_copen_command="Copen"$/;"	v
+ga	plugins/align.vim	/^nmap ga <Plug>(EasyAlign)$/;"	m
+mapleader	leader.vim	/^let mapleader="\\\\"$/;"	v
+tc	misc.vim	/^noremap tc :tabnew<CR>$/;"	m
+th	misc.vim	/^noremap th :tabprevious<CR>$/;"	m
+tl	misc.vim	/^noremap tl :tabnext<CR>$/;"	m
+tn	misc.vim	/^noremap tn :tabnext<CR>$/;"	m
+tp	misc.vim	/^noremap tp :tabprevious<CR>$/;"	m
+tq	misc.vim	/^noremap tq :tabclose<CR>$/;"	m
+v	plugins/expand_region.vim	/^vmap v <Plug>(expand_region_expand)$/;"	m

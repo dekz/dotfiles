@@ -1,0 +1,24 @@
+# handles updating fresh
+fresh freshshell/fresh bin/fresh --bin
+fresh freshshell/fresh contrib/completion/fresh-completion.zsh --file=completion/_fresh
+fresh freshshell/fresh-open bin/fresh-open --bin
+
+# Colors
+fresh base16-shell --file=~/.config/base16-shell/
+
+# ZSH
+fresh zprezto --file=~/.zprezto/
+
+# Tmux
+fresh tmux.conf --file=~/.tmux.conf
+
+fresh-options --file=~/.config/nvim/init.vim --marker=\"
+  fresh vim/plug_before.vim
+  fresh vim/plug.vim
+  fresh vim/plug_after.vim
+  fresh vim/leader.vim
+  fresh vim/colors.vim
+  fresh vim/plugins/\*
+
+  fresh vim/misc.vim
+fresh-options
