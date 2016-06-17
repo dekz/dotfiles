@@ -7,7 +7,8 @@ fresh freshshell/fresh-open bin/fresh-open --bin
 fresh base16-shell --file=~/.config/base16-shell/
 
 # ZSH
-fresh zprezto --file=~/.zprezto/
+fresh zshrc --file=~/.zshrc
+fresh zplugrc --file=~/.zplugrc
 
 # Tmux
 fresh tmux.conf --file=~/.tmux.conf
