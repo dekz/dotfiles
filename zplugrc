@@ -34,7 +34,6 @@ if zplug check tarjoilija/zgen; then
     zgen prezto history-substring-search
     zgen prezto completion
     zgen prezto prompt
-    zgen prezto ls
     
     zgen save
   fi
@@ -44,13 +43,13 @@ if zplug check tarjoilija/zgen; then
     'environment' \
     'terminal' \
     'editor' \
-    'ls'     \
     'history' \
     'directory' \
     'spectrum' \
     'utility' \
     'completion' \
     'ruby' \
+    'ls'  \
     'fzf' \
     'git' \
     'syntax-highlighting' \
@@ -95,7 +94,7 @@ if ! zplug check --verbose; then
   fi
 fi
 
-zplug load --verbose
+zplug load
 
 prompt sorin
 source "$ZPLUG_HOME/repos/dekz/zsh-prezto-prompt/prompt_dekz_setup"
