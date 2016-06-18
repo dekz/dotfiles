@@ -1,6 +1,8 @@
 source ~/.zplug/init.zsh
 zplug "zplug/zplug"
 
+zplug "rupa/z", use:z.sh
+
 zplug "junegunn/fzf-bin", \
     from:gh-r, \
     as:command, \

@@ -66,9 +66,6 @@ fi
 
 TMPPREFIX="${TMPDIR%/}/zsh"
 
-
-# Z
-[[ -s "$HOME/environment/z" ]] && source "$HOME/environment/z/z.sh"
 # Go
 export GOPATH="$HOME/environment/go"
 export PATH="$GOPATH/bin:$PATH"
@@ -77,10 +74,9 @@ export PATH="$GOPATH/bin:$PATH"
 #
 # Ruby
 #
-eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
-alias rb=rbenv
+eval "$(rbenv init -)"
 
 #
 # Node
