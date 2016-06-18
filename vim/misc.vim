@@ -156,3 +156,7 @@ nnoremap <F8> :call <SID>rotate_colors()<cr>
 set nocursorcolumn
 highlight clear LineNr
 highlight clear SignColumn
+highlight Search ctermbg=10 ctermfg=18 term=bold
+highlight Visual ctermbg=10 ctermfg=18 term=bold
+highlight VertSplit ctermbg=0 ctermfg=2
+highlight NonText ctermbg=0 ctermfg=0

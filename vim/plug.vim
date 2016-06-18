@@ -2,11 +2,10 @@ set nocompatible
 filetype off                   " required!
 
 call plug#begin('~/.nvim/plugged')
+Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-fugitive'
-"Plug 'altercation/vim-colors-solarized'
 Plug 'chriskempson/base16-vim'
 Plug 'itchyny/lightline.vim'
-"
 Plug 'milkypostman/vim-togglelist'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-unimpaired'
@@ -14,18 +13,16 @@ Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-rsi'
-Plug 'unblevable/quick-scope'
-"" Bdelete
-Plug 'moll/vim-bbye'
-"
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
 Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-dispatch'
+Plug 'unblevable/quick-scope'
+Plug 'moll/vim-bbye'
 Plug 'thoughtbot/vim-rspec'
 Plug 'vim-ruby/vim-ruby'
-"Plug 'ludovicchabant/vim-gutentags'
-"Plug 'edkolev/tmuxline.vim'
-"Plug 'skalnik/vim-vroom'
+Plug 'duggiefresh/vim-easydir'
 
 " {{{
 " :Files :Commits :Buffers
@@ -33,21 +30,18 @@ Plug 'vim-ruby/vim-ruby'
 set rtp+=~/.fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
+Plug 'junegunn/vim-peekaboo'
+
 Plug 'ntpeters/vim-better-whitespace'
 
 Plug 'luochen1990/rainbow'
 Plug 'terryma/vim-expand-region'
-Plug 'junegunn/vim-easy-align'
-Plug 'junegunn/vim-peekaboo'
 
-Plug 'tpope/vim-dispatch'
 Plug 'janko-m/vim-test'
 Plug 'kassio/neoterm'
-
-Plug 'tpope/vim-vinegar'
 
 " {{{
 " bar if foo?
@@ -56,7 +50,7 @@ Plug 'tpope/vim-vinegar'
 " }}}
 Plug 'AndrewRadev/splitjoin.vim'
 
-Plug 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic', { 'on': 'SyntasticCheck' }
 
 Plug 't9md/vim-choosewin'
 Plug 'kshenoy/vim-signature'

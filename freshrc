@@ -23,3 +23,5 @@ fresh-options --file=~/.config/nvim/init.vim --marker=\"
 
   fresh vim/misc.vim
 fresh-options
+
+fresh vim/autoload/lightline/colorscheme/base16_dekz.vim --file=~/.config/nvim/autoload/lightline/colorscheme/base16_dekz.vim
