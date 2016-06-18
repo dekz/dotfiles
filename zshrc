@@ -77,6 +77,7 @@ export PATH="$GOPATH/bin:$PATH"
 #
 # Ruby
 #
+eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 alias rb=rbenv

@@ -12,7 +12,10 @@ zplug "stedolan/jq", \
     as:command, \
     rename-to:jq
 
+zplug "rcmdnk/sentaku"
+zplug "psprint/zsh-select"
 zplug "zsh-users/zsh-syntax-highlighting", nice:1
+zplug "supercrabtree/k"
 
 # Zgen hack to get prezto support
 zplug "tarjoilija/zgen", ignore:zgen.zsh
