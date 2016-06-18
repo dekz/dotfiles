@@ -1,0 +1,39 @@
+[user]
+	name = Jacob Evans
+	email = jacob@dekz.net
+[core]
+	excludes = /Users/dekz/.gitignore
+	excludesfile = /Users/dekz/.gitignore
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustexitcode = true
+[merge]
+	tool = Kaleidoscope
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[mergetool]
+	prompt = false
+[diff]
+	tool = Kaleidoscope
+[github]
+	user = dekz
+[ghi]
+[ghi]
+	token = !security find-internet-password -a dekz -s github.com -l 'ghi token' -w
+[ghi "highlight"]
+	style = colorful
+[push]
+	default = simple
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+[alias]
+  lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(dim magenta)%h%C(reset) - %C(dim blue)(%ar)%C(reset) %C(dim black)%s%C(reset) %C(dim green)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+  lg = !"git lg1"
+  st = status
+  ds = diff --staged
+  dts = difftool --staged
+  po = push origin
+  cm = commit -m 

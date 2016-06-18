@@ -1,0 +1,9 @@
+*.swp
+*.swo
+*.class
+.zsh/zhistory
+.DS_Store
+tags
+cscope.out
+node_modules/
+config/projections.json
