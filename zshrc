@@ -1,4 +1,11 @@
+# ZPlug
 source ~/.zplugrc
+
+HISTFILE="$HOME/.zhistory"
+HISTSIZE=10000
+SAVEHIST=10000 
+setopt inc_append_history
+setopt share_history
 
 if [[ "$OSTYPE" == darwin* ]]; then
   export BROWSER='open'
@@ -92,8 +99,6 @@ docker-enter() {
 
 function spoof-mac() { sudo spoof-mac randomize wi-fi }
 
-bindkey '^R' history-incremental-search-backward
-
 fancy-ctrl-z () {
   if [[ $#BUFFER -eq 0 ]]; then
     BUFFER="fg"
@@ -126,3 +131,8 @@ if (( $+commands[tag] )); then
   tag() { command tag "$@"; source ${TAG_ALIAS_FILE:-/tmp/tag_aliases} 2>/dev/null }
   alias ag=tag
 fi
+
+fh() {
+  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
+}
+

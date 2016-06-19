@@ -1,13 +1,16 @@
 source ~/.zplug/init.zsh
-zplug "zplug/zplug"
 
-zplug "dekz/prompt", use:prompt.zsh
+zplug "zplug/zplug", nice:1
+
+zplug "dekz/prompt", use:prompt.zsh, nice:10
 
 zplug "junegunn/fzf-bin", \
     from:gh-r, \
     as:command, \
     rename-to:fzf, \
     use:"*darwin*amd64*"
+
+zplug "junegunn/fzf", use:shell/key-bindings.zsh, nice:10
 
 zplug "stedolan/jq", \
     from:gh-r, \
@@ -16,7 +19,7 @@ zplug "stedolan/jq", \
 
 zplug "zsh-users/zsh-syntax-highlighting", nice:1
 zplug "supercrabtree/k"
-zplug "rupa/z", use:z.sh
+zplug "rupa/z", use:z.sh, nice:1
 
 if ! zplug check --verbose; then
   printf "Install? [y/N]: "
