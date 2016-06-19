@@ -1,7 +1,7 @@
 source ~/.zplug/init.zsh
 zplug "zplug/zplug"
 
-zplug "rupa/z", use:z.sh
+zplug "dekz/prompt", use:prompt.zsh
 
 zplug "junegunn/fzf-bin", \
     from:gh-r, \
@@ -14,83 +14,9 @@ zplug "stedolan/jq", \
     as:command, \
     rename-to:jq
 
-zplug "rcmdnk/sentaku"
-zplug "psprint/zsh-select"
 zplug "zsh-users/zsh-syntax-highlighting", nice:1
 zplug "supercrabtree/k"
-
-# Zgen hack to get prezto support
-zplug "tarjoilija/zgen", ignore:zgen.zsh
-if zplug check tarjoilija/zgen; then
-  source "$ZPLUG_HOME/repos/tarjoilija/zgen/zgen.zsh"
-  if ! zgen saved ; then
-    echo "Creating a zgen save"
-    zgen prezto
-      
-    zgen prezto environment
-    zgen prezto syntax-highlighting
-    zgen prezto git
-    zgen prezto history
-    zgen prezto editor
-    zgen prezto directory
-    zgen prezto terminal
-    zgen prezto spectrum
-    zgen prezto utility
-    zgen prezto history-substring-search
-    zgen prezto completion
-    zgen prezto prompt
-    
-    zgen save
-  fi
-
-  zstyle ':prezto:*:*' color 'yes'
-  zstyle ':prezto:load' pmodule \
-    'environment' \
-    'terminal' \
-    'editor' \
-    'history' \
-    'directory' \
-    'spectrum' \
-    'utility' \
-    'completion' \
-    'ruby' \
-    'ls'  \
-    'fzf' \
-    'git' \
-    'syntax-highlighting' \
-    'tmux' \
-    'prompt'
-  
-  zstyle ':prezto:module:editor' key-bindings 'emacs'
-  zstyle ':prezto:module:syntax-highlighting' color 'yes'
-  zstyle ':prezto:module:syntax-highlighting' highlighters \
-    'main' \
-    'brackets' \
-    'pattern' \
-    'cursor' \
-    'root'
-  
-  zstyle ":prezto:module:terminal" auto-title "yes"
-  zstyle ":prezto:module:tmux:iterm" integrate "yes"
-
-  if zstyle -t ':prezto:module:utility:ls' color; then
-    export LSCOLORS='exfxcxdxbxGxDxabagacad'
-    export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=36;01:cd=33;01:su=31;40;07:sg=36;40;07:tw=32;40;07:ow=33;40;07:'
-    alias ls="${aliases[ls]:-ls} -G"
-  else
-    alias ls="${aliases[ls]:-ls} -F"
-  fi
-
-  if zstyle -t ':prezto:module:utility:grep' color; then
-    export GREP_COLOR='37;45'           # BSD.
-    export GREP_COLORS="mt=$GREP_COLOR" # GNU.
-
-    alias grep="${aliases[grep]:-grep} --color=auto"
-  fi
-  
-  zplug "dekz/zsh-prezto-prompt", use:prompt_dekz_setup on:"sorin-ionescu/prezto", nice:1
-fi
-
+zplug "rupa/z", use:z.sh
 
 if ! zplug check --verbose; then
   printf "Install? [y/N]: "
@@ -100,6 +26,3 @@ if ! zplug check --verbose; then
 fi
 
 zplug load
-
-prompt sorin
-source "$ZPLUG_HOME/repos/dekz/zsh-prezto-prompt/prompt_dekz_setup"
