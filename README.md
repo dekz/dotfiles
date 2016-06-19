@@ -2,7 +2,9 @@
 
 ## Prompt
 
-[![prompt](http://i.imgur.com/OYa0T6f.png)]()
+[![prompt](http://i.imgur.com/rP0NpZS.png)]()
+[![prompt](http://i.imgur.com/qwx7UJI.png)]()
+
 
 ## vim
 
