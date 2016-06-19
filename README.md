@@ -3,7 +3,7 @@
 ## Prompt
 
 [![prompt](http://i.imgur.com/rP0NpZS.png)]()
-[![prompt](http://i.imgur.com/qwx7UJI.png)]()
+[![prompt](http://i.imgur.com/Dlnjir0.png)]()
 
 
 ## vim
