@@ -7,6 +7,7 @@ SAVEHIST=10000
 setopt inc_append_history
 setopt share_history
 
+
 if [[ "$OSTYPE" == darwin* ]]; then
   export BROWSER='open'
 fi
@@ -16,9 +17,13 @@ fi
 #
 
 alias vim="nvim"
-export EDITOR='vim'
-export VISUAL='vim'
+export EDITOR='nvim'
+export VISUAL='nvim'
 export PAGER='less'
+
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey "^X^E" edit-command-line
 
 #
 # Language
@@ -89,6 +94,7 @@ export PATH="$GOPATH/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 eval "$(rbenv init -)"
+alias be="bundle exec"
 
 #
 # Node

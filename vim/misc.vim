@@ -153,6 +153,15 @@ function! s:rotate_colors()
 endfunction
 nnoremap <F8> :call <SID>rotate_colors()<cr>
 
+vnoremap <Leader>d "+d
+vnoremap <Leader>y "+y
+vnoremap <Leader>p "+p
+vnoremap <Leader>P "+P
+nnoremap <Leader>d "+d
+nnoremap <Leader>y "+y
+nnoremap <Leader>p "+p
+nnoremap <Leader>P "+P
+
 set nocursorcolumn
 highlight clear LineNr
 highlight clear SignColumn
@@ -160,3 +169,6 @@ highlight Search ctermbg=10 ctermfg=18 term=bold
 highlight Visual ctermbg=10 ctermfg=18 term=bold
 highlight VertSplit ctermbg=0 ctermfg=2
 highlight NonText ctermbg=0 ctermfg=0
+highlight Pmenu ctermbg=0 ctermfg=5
+highlight PmenuSel ctermbg=6 ctermfg=15
+
