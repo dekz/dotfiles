@@ -1,4 +1,5 @@
 # ZPlug
+export ZPLUG_HOME="$HOME/.zplug"
 source ~/.zplugrc
 
 HISTFILE="$HOME/.zhistory"
