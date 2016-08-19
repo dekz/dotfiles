@@ -5,9 +5,18 @@ source ~/.zplugrc
 HISTFILE="$HOME/.zhistory"
 HISTSIZE=10000
 SAVEHIST=10000 
-setopt inc_append_history
-setopt share_history
 
+setopt INC_APPEND_HISTORY        # Write to the history file immediately, not when the shell exits.
+setopt SHARE_HISTORY             # Share history between all sessions.
+setopt HIST_EXPIRE_DUPS_FIRST    # Expire duplicate entries first when trimming history.
+setopt HIST_IGNORE_DUPS          # Don't record an entry that was just recorded again.
+setopt HIST_IGNORE_ALL_DUPS      # Delete old recorded entry if new entry is a duplicate.
+setopt HIST_FIND_NO_DUPS         # Do not display a line previously found.
+setopt HIST_IGNORE_SPACE         # Don't record an entry starting with a space.
+setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history file.
+setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
+setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
+setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 
 if [[ "$OSTYPE" == darwin* ]]; then
   export BROWSER='open'
@@ -153,33 +162,6 @@ z() {
   [ $# -gt 0 ] && _z "$*" && return
   cd "$(_z -l 2>&1 | fzf-tmux +s --tac --query "$*" | sed 's/^[0-9,.]* *//')"
 }
-
-fstash() {
-  local out q k sha
-  while out=$(
-    git stash list --pretty="%C(yellow)%h %>(14)%Cgreen%cr %C(blue)%gs" |
-    fzf --ansi --no-sort --query="$q" --print-query \
-        --expect=ctrl-d,ctrl-b);
-  do
-    IFS=$'\n'; set -f
-    lines=($(<<< "$out"))
-    unset IFS; set +f
-    q="${lines[0]}"
-    k="${lines[1]}"
-    sha="${lines[-1]}"
-    sha="${sha%% *}"
-    [[ -z "$sha" ]] && continue
-    if [[ "$k" == 'ctrl-d' ]]; then
-      git diff $sha
-    elif [[ "$k" == 'ctrl-b' ]]; then
-      git stash branch "stash-$sha" $sha
-      break;
-    else
-      git -c color.ui=always stash show -p $sha | less -+F
-    fi
-  done
-}
-
 
 # Google Chrome Browsing History
 c() {
