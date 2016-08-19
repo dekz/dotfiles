@@ -1,5 +1,6 @@
 " FZF
-nnoremap <silent> <leader><space> :Files<CR>
+nnoremap <silent> <leader><space> :GFiles<CR>
+noremap <Leader>f :GFiles<CR>
 noremap <Leader>t :Files<CR>
 noremap <Leader>T :Buffers<CR>
 

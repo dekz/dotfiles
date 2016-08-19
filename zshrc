@@ -152,3 +152,47 @@ z() {
   [ $# -gt 0 ] && _z "$*" && return
   cd "$(_z -l 2>&1 | fzf-tmux +s --tac --query "$*" | sed 's/^[0-9,.]* *//')"
 }
+
+fstash() {
+  local out q k sha
+  while out=$(
+    git stash list --pretty="%C(yellow)%h %>(14)%Cgreen%cr %C(blue)%gs" |
+    fzf --ansi --no-sort --query="$q" --print-query \
+        --expect=ctrl-d,ctrl-b);
+  do
+    IFS=$'\n'; set -f
+    lines=($(<<< "$out"))
+    unset IFS; set +f
+    q="${lines[0]}"
+    k="${lines[1]}"
+    sha="${lines[-1]}"
+    sha="${sha%% *}"
+    [[ -z "$sha" ]] && continue
+    if [[ "$k" == 'ctrl-d' ]]; then
+      git diff $sha
+    elif [[ "$k" == 'ctrl-b' ]]; then
+      git stash branch "stash-$sha" $sha
+      break;
+    else
+      git -c color.ui=always stash show -p $sha | less -+F
+    fi
+  done
+}
+
+
+# Google Chrome Browsing History
+c() {
+  local cols sep
+  cols=$(( COLUMNS / 3 ))
+  sep='{{::}}'
+
+  # Copy History DB to circumvent the lock
+  # - See http://stackoverflow.com/questions/8936878 for the file path
+  cp -f ~/Library/Application\ Support/Google/Chrome/Default/History /tmp/h
+
+  sqlite3 -separator $sep /tmp/h \
+    "select substr(title, 1, $cols), url
+     from urls order by last_visit_time desc" |
+  awk -F $sep '{printf "%-'$cols's  \x1b[36m%s\n", $1, $2}' |
+  fzf --ansi --multi | sed 's#.*\(https*://\)#\1#' | xargs open
+}
