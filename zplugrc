@@ -1,6 +1,6 @@
 source $ZPLUG_HOME/init.zsh
 
-zplug "zplug/zplug", nice:1
+#zplug "zplug/zplug", nice:1
 
 zplug "dekz/prompt", use:prompt.zsh, nice:10
 zplug "dekz/dotfiles", use:"scripts/*.sh", nice:10
@@ -19,7 +19,6 @@ zplug "stedolan/jq", \
     rename-to:jq
 
 zplug "zsh-users/zsh-syntax-highlighting", nice:1
-zplug "supercrabtree/k"
 zplug "rupa/z", use:z.sh, nice:1
 
 if ! zplug check --verbose; then
