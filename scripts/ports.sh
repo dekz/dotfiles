@@ -16,7 +16,7 @@ function ports {
 function kill-ports {
   ports | {
     while read DATA; do
-      local port=$(echo $DATA | awk '{ print $2; }' | head -n 2)
+      local port=$(echo $DATA | awk '{ print $1; }' | head -n 2)
       echo "Killing: $DATA" 
       kill -${1:-9} "$port"
     done
