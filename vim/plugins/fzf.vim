@@ -1,4 +1,8 @@
 " FZF
+let g:fzf_layout = { 'up': '~25%', 'options': '--reverse' }
+let g:fzf_files_options =
+  \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
+
 nnoremap <silent> <leader><space> :GFiles<CR>
 noremap <Leader>f :GFiles<CR>
 noremap <Leader>t :Files<CR>
