@@ -23,6 +23,7 @@ Plug 'moll/vim-bbye'
 Plug 'thoughtbot/vim-rspec'
 Plug 'vim-ruby/vim-ruby'
 Plug 'duggiefresh/vim-easydir'
+Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
 
 " {{{
 " :Files :Commits :Buffers
@@ -60,3 +61,5 @@ call plug#end()
 set omnifunc=syntaxcomplete#Complete
 
 filetype plugin indent on     " required!
+
+noremap <Leader>x :Sayonara<CR>

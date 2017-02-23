@@ -9,9 +9,9 @@ zplug "junegunn/fzf-bin", \
     from:gh-r, \
     as:command, \
     rename-to:fzf, \
-    use:"*darwin*amd64*"
+    use:"*${(L)$(uname -s)}*amd64*"
 
-zplug "junegunn/fzf", use:shell/key-bindings.zsh, nice:10
+#zplug "junegunn/fzf", use:shell/key-bindings.zsh, nice:10
 
 zplug "stedolan/jq", \
     from:gh-r, \
