@@ -168,7 +168,7 @@ f() {
 }
 
 function sunset() {
-  colorscheme 'base16-atelierplateau.dark'
+  colorscheme 'base16-atelierplateau-contrast.dark'
 }
 
 function sunrise() {
