@@ -9,7 +9,7 @@ zplug "junegunn/fzf-bin", \
     from:gh-r, \
     as:command, \
     rename-to:fzf, \
-    use:"*16**${(L)$(uname -s)}*amd64*"
+    use:"*16*${(L)$(uname -s)}*amd64*"
 
 #zplug "junegunn/fzf", use:shell/key-bindings.zsh, nice:10
 
