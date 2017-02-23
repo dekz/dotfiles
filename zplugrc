@@ -1,9 +1,9 @@
 source $ZPLUG_HOME/init.zsh
 
-#zplug "zplug/zplug", nice:1
+zplug "zplug/zplug", defer:1
 
-zplug "dekz/prompt", use:prompt.zsh, nice:10
-zplug "dekz/dotfiles", use:"scripts/*.sh", nice:10
+zplug "dekz/prompt", use:prompt.zsh, defer:10
+zplug "dekz/dotfiles", use:"scripts/*.sh", defer:10
 
 zplug "junegunn/fzf-bin", \
     from:gh-r, \
@@ -11,15 +11,15 @@ zplug "junegunn/fzf-bin", \
     rename-to:fzf, \
     use:"*16*${(L)$(uname -s)}*amd64*"
 
-#zplug "junegunn/fzf", use:shell/key-bindings.zsh, nice:10
+zplug "junegunn/fzf", use:shell/key-bindings.zsh, defer:10
 
 zplug "stedolan/jq", \
     from:gh-r, \
     as:command, \
     rename-to:jq
 
-zplug "zsh-users/zsh-syntax-highlighting", nice:1
-zplug "rupa/z", use:z.sh, nice:1
+zplug "zsh-users/zsh-syntax-highlighting", defer:1
+zplug "rupa/z", use:z.sh, defer:1
 
 if ! zplug check --verbose; then
   printf "Install? [y/N]: "
